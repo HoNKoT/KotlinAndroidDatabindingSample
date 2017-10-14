@@ -11,4 +11,10 @@
         android:text="@string/move_to_BMICalculateActivity"
         android:onClick="onClickBMICalculate"/>
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/move_to_BMIListActivity"
+        android:onClick="onClickBMIList"/>
+
 </LinearLayout>

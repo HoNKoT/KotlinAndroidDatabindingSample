@@ -3,6 +3,9 @@
     <string name="height">Height</string>
     <string name="weight">Weight</string>
     <string name="bmi">BMI</string>
+
+    <string name="no_name">NO NAME</string>
+
     <string name="empty">""</string>
     <string name="format">%.1d</string>
     <string name="bmi_plus">BMI: %d</string>
@@ -10,4 +13,5 @@
     <string name="kg">kg</string>
 
     <string name="move_to_BMICalculateActivity">DataBinding Basic</string>
+    <string name="move_to_BMIListActivity">BindingAdapter Sample</string>
 </resources>

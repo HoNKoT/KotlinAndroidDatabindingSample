@@ -1,20 +1,24 @@
 package jp.chau2chaun2.kotlindatabindingsample.task
 
 import android.databinding.ObservableBoolean
-import android.os.AsyncTask
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 
-class BMICalculatorTask : AsyncTask<PersonPresenter, Unit, Unit>() {
+
+
+class BMICalculatorTask {
 
     val loading = ObservableBoolean(false)
 
-    override fun doInBackground(vararg presenters: PersonPresenter) {
-        loading.set(true)
-        presenters.map { it.calculateBmi() }
+    fun execute(presenter: PersonPresenter) {
+        Thread(Runnable {
+            loading.set(true)
 
-        // for presentation
-        Thread.sleep(2000)
+            presenter.calculateBmi()
 
-        loading.set(false)
+            // for presentation
+            Thread.sleep(2000)
+
+            loading.set(false)
+        }).start()
     }
 }

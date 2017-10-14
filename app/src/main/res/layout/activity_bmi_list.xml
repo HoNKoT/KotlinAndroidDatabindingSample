@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="jp.chau2chaun2.kotlindatabindingsample.model.Person" />
+        <import type="java.util.List"/>
+        <variable name="person" type="Person"/>
+        <variable name="persons" type="List&lt;Person&gt;"/>
+    </data>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:data="@{persons}"
+        tools:context="jp.chau2chaun2.kotlindatabindingsample.view.BMIListActivity" />
+</layout>

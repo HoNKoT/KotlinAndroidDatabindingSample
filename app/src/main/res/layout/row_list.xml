@@ -1,41 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="jp.chau2chaun2.kotlindatabindingsample.model.Person" />
+        <variable
+            name="task"
+            type="jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask" />
+    </data>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/general_margin"
-        android:layout_marginRight="@dimen/general_margin"
-        android:layout_marginTop="@dimen/half_margin"
-        android:layout_marginBottom="@dimen/half_margin">
+        android:layout_height="wrap_content">
 
         <ProgressBar
+            android:visibility="@{task.loading ? View.VISIBLE : View.INVISIBLE}"
             android:layout_centerInParent="true"
             android:layout_width="@dimen/progress_bar_size"
             android:layout_height="@dimen/progress_bar_size" />
 
         <LinearLayout
+            android:visibility="@{task.loading ? View.INVISIBLE : View.VISIBLE}"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/general_margin"
+            android:layout_marginRight="@dimen/general_margin"
+            android:layout_marginTop="@dimen/half_margin"
+            android:layout_marginBottom="@dimen/half_margin"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@{data.name ?? @string/no_name}"
                 tools:text="Title"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="@dimen/small_text_size"
+                android:text="@{data.sex != null ? data.sex.name : @string/empty}"
                 tools:text="Sub title"/>
 
         </LinearLayout>
 
         <TextView
+            android:visibility="@{task.loading ? View.INVISIBLE : View.VISIBLE}"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/general_margin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{data.displayBmi}"
             tools:text="BMI: 21.4"/>
     </RelativeLayout>
 </layout>
