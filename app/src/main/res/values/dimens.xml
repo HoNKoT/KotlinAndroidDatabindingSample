@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="general_margin">16dp</dimen>
+    <dimen name="half_margin">8dp</dimen>
+
+    <dimen name="general_content_width">100dp</dimen>
+    <dimen name="half_content_width">50dp</dimen>
+    <dimen name="progress_bar_size">25dp</dimen>
+
+    <dimen name="small_text_size">10sp</dimen>
+    <dimen name="large_text_size">20sp</dimen>
+</resources>

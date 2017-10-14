@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">KotlinDataBindingSample</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="bmi">BMI</string>
+    <string name="empty">""</string>
+    <string name="format">%.1d</string>
+    <string name="bmi_plus">BMI: %d</string>
+    <string name="cm">cm</string>
+    <string name="kg">kg</string>
+</resources>
