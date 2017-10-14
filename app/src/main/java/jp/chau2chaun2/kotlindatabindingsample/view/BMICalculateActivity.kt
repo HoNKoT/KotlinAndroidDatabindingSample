@@ -1,5 +1,7 @@
 package jp.chau2chaun2.kotlindatabindingsample.view
 
+import android.content.Context
+import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -40,6 +42,12 @@ class BMICalculateActivity : AppCompatActivity() {
             mBinding.task = BMICalculatorTask().also { it.execute(mBinding.presenter) }
         } else {
             Toast.makeText(this, "input height and weight first", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    companion object {
+        fun getIntent(context: Context): Intent {
+            return Intent(context, BMICalculateActivity::class.java)
         }
     }
 }

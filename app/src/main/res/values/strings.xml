@@ -8,4 +8,6 @@
     <string name="bmi_plus">BMI: %d</string>
     <string name="cm">cm</string>
     <string name="kg">kg</string>
+
+    <string name="move_to_BMICalculateActivity">DataBinding Basic</string>
 </resources>
