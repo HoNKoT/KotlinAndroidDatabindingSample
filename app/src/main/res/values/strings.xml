@@ -7,8 +7,8 @@
     <string name="no_name">NO NAME</string>
 
     <string name="empty">""</string>
-    <string name="format">%.1d</string>
-    <string name="bmi_plus">BMI: %d</string>
+    <string name="format">%.1f</string>
+    <string name="bmi_plus">BMI: %f</string>
     <string name="cm">cm</string>
     <string name="kg">kg</string>
 
