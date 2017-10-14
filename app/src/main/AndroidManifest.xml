@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.BMICalculateActivity" />
+        <activity android:name=".view.BMIRealtimeCalculateActivity" />
         <activity android:name=".view.BMIListActivity" />
     </application>
 

@@ -13,5 +13,6 @@
     <string name="kg">kg</string>
 
     <string name="move_to_BMICalculateActivity">DataBinding Basic</string>
+    <string name="move_to_BMIRealtimeCalculateActivity">DataBinding Bindable</string>
     <string name="move_to_BMIListActivity">BindingAdapter Sample</string>
 </resources>

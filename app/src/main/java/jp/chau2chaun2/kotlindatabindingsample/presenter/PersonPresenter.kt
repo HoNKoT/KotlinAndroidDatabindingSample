@@ -16,7 +16,9 @@ class PersonPresenter {
 
     val person: Person
 
-    val canCalculate: Boolean get() = person.height != null && person.weight != null
+    val canCalculate: Boolean get() =
+        person.height?.let { it > 0 } == true
+                && person.weight?.let { it > 0 } == true
 
     fun calculateBmi() {
         if (canCalculate) {

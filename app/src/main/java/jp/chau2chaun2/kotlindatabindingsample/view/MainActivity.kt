@@ -16,5 +16,7 @@ class MainActivity : AppCompatActivity() {
 
     fun onClickBMICalculate(view: View) = startActivity(BMICalculateActivity.getIntent(this))
 
+    fun onClickBMIRealtimeCalculate(view: View) = startActivity(BMIRealtimeCalculateActivity.getIntent(this))
+
     fun onClickBMIList(view: View) = startActivity(BMIListActivity.getIntent(this))
 }
