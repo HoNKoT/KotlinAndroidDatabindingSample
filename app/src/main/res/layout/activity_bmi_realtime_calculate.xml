@@ -32,7 +32,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="@{viewModel.inputText}"
+                    android:text="@={viewModel.height}"
                     tools:text="161.0"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="@{viewModel.inputText}"
+                    android:text="@={viewModel.weight}"
                     tools:text="60.0"/>
                 <TextView
                     android:layout_width="wrap_content"
