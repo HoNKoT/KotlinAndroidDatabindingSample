@@ -15,7 +15,7 @@ import jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask
 
 class BMICalculateActivity : AppCompatActivity() {
 
-    val mBinding: ActivityBmiCalculateBinding by lazy {
+    private val mBinding: ActivityBmiCalculateBinding by lazy {
         DataBindingUtil.setContentView<ActivityBmiCalculateBinding>(this, R.layout.activity_bmi_calculate)
     }
 
@@ -27,7 +27,7 @@ class BMICalculateActivity : AppCompatActivity() {
     }
 
     private fun updatePerson() {
-        mBinding.presenter.person.apply {
+        mBinding.presenter?.person?.apply {
             height = mBinding.heightEditText.text.toString().takeIf { it.isNotEmpty() }?.toDouble()
             weight = mBinding.weightEditText.text.toString().takeIf { it.isNotEmpty() }?.toDouble()
         }
@@ -37,9 +37,9 @@ class BMICalculateActivity : AppCompatActivity() {
     fun onClickBmi(view: View) {
         updatePerson()
 
-        Log.d("DLog", mBinding.presenter.person.toString())
-        if (mBinding.presenter.canCalculate) {
-            mBinding.task = BMICalculatorTask().also { it.execute(mBinding.presenter) }
+        Log.d("DLog", mBinding.presenter?.person?.toString())
+        if (mBinding.presenter?.canCalculate == true) {
+            mBinding.task = BMICalculatorTask().also { it.execute(mBinding.presenter!!) }
         } else {
             Toast.makeText(this, "input height and weight first", Toast.LENGTH_SHORT).show()
         }
