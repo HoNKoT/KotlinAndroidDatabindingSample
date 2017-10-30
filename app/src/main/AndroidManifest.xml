@@ -16,8 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".view.BMICalculateActivity" />
-        <activity android:name=".view.BMIRealtimeCalculateActivity" />
+        <activity
+            android:name=".view.BMICalculateActivity"
+            android:windowSoftInputMode="adjustResize"/>
+        <activity
+            android:name=".view.BMIRealtimeCalculateActivity"
+            android:windowSoftInputMode="adjustResize"/>
         <activity android:name=".view.BMIListActivity" />
     </application>
 
