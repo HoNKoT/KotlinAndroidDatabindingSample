@@ -5,10 +5,11 @@ import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import jp.chau2chaun2.kotlindatabindingsample.CustomApplication
 import jp.chau2chaun2.kotlindatabindingsample.R
 import jp.chau2chaun2.kotlindatabindingsample.databinding.ActivityBmiRealtimeCalculateBinding
-import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 import jp.chau2chaun2.kotlindatabindingsample.viewmodel.BMIRealtimeCalculateViewModel
+import javax.inject.Inject
 
 class BMIRealtimeCalculateActivity : AppCompatActivity() {
 
@@ -16,11 +17,14 @@ class BMIRealtimeCalculateActivity : AppCompatActivity() {
         DataBindingUtil.setContentView<ActivityBmiRealtimeCalculateBinding>(this, R.layout.activity_bmi_realtime_calculate)
     }
 
+    @Inject lateinit var viewModel: BMIRealtimeCalculateViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val presenter = PersonPresenter()
-        mBinding.viewModel = BMIRealtimeCalculateViewModel(presenter)
+        (application as? CustomApplication)?.getComponent()?.inject(this)
+
+        mBinding.viewModel = viewModel
     }
 
     companion object {
