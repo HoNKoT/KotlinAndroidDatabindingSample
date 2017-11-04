@@ -12,7 +12,7 @@ import javax.inject.Inject
 class BMIRealtimeCalculateViewModel @Inject constructor(private val mPresenter: PersonPresenter,
                                                         private val mContext: Context) : BaseObservable() {
 
-    var height: String = ""
+    var height: String = mPresenter.person.height?.toString() ?: ""
         @Bindable get() = field
         set(value) {
             Log.e("test", "height setter")
@@ -22,7 +22,7 @@ class BMIRealtimeCalculateViewModel @Inject constructor(private val mPresenter: 
             updateBmi()
         }
 
-    var weight: String = ""
+    var weight: String = mPresenter.person.weight?.toString() ?: ""
         @Bindable get() = field
         set(value) {
             Log.e("test", "weight setter")
