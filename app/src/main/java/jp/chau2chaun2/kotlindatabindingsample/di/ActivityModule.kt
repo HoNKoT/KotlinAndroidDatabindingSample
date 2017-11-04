@@ -1,15 +1,20 @@
 package jp.chau2chaun2.kotlindatabindingsample.di
 
+import android.app.Activity
 import dagger.Module
 import dagger.Provides
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
-import javax.inject.Singleton
 
 @Module
-class ModelModule {
+class ActivityModule(private val mActivity: Activity) {
 
     @Provides
-    @Singleton
+    fun provideActivity(): Activity {
+        return mActivity
+    }
+
+    @ActivityScope
+    @Provides
     fun providePersonPresenter(): PersonPresenter {
         return PersonPresenter()
     }
