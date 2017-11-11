@@ -19,6 +19,8 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    // for data binding
     dataBinding {
         enabled = true
     }
@@ -34,7 +36,14 @@ dependencies {
     compile 'com.android.support:appcompat-v7:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
+
+    // for data binding
     kapt 'com.android.databinding:compiler:3.0.0'
+
+    // for dagger2
+    compile "com.google.dagger:dagger:2.12"
+    annotationProcessor "com.google.dagger:dagger-compiler:2.12"
+    kapt "com.google.dagger:dagger-compiler:2.12"
 }
 
 repositories {

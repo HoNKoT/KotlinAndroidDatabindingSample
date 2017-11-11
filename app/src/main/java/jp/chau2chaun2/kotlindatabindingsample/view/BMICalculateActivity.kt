@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -12,18 +11,24 @@ import jp.chau2chaun2.kotlindatabindingsample.R
 import jp.chau2chaun2.kotlindatabindingsample.databinding.ActivityBmiCalculateBinding
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 import jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask
+import javax.inject.Inject
 
-class BMICalculateActivity : AppCompatActivity() {
+class BMICalculateActivity : BaseActivity() {
 
     private val mBinding: ActivityBmiCalculateBinding by lazy {
         DataBindingUtil.setContentView<ActivityBmiCalculateBinding>(this, R.layout.activity_bmi_calculate)
     }
 
+    @Inject lateinit var mPresenter: PersonPresenter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val presenter = PersonPresenter()
-        mBinding.presenter = presenter
+        mBinding.presenter = mPresenter
+    }
+
+    override fun onActivityInject() {
+        mComponent.inject(this)
     }
 
     private fun updatePerson() {
