@@ -34,4 +34,10 @@ public class AppModule {
     SharedPreferences.Editor provideSharedPreference(Context context) {
         return context.getSharedPreferences("Default", Context.MODE_PRIVATE).edit();
     }
+
+    @Singleton
+    @Provides
+    OrmaDatabase providesOrmaDatabase(Context context) {
+        return OrmaDatabase.builder(context).build();
+    }
 }
