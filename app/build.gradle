@@ -56,3 +56,7 @@ repositories {
     mavenCentral()
     google()
 }
+
+kapt {
+    correctErrorTypes = true
+}
