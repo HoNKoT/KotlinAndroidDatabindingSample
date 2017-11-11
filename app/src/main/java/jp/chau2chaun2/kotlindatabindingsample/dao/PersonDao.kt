@@ -14,7 +14,7 @@ import javax.inject.Singleton
 @Singleton
 class PersonDao @Inject constructor(private val mOrma: OrmaDatabase) {
 
-    private fun relation(): Person_Relation = mOrma.relationOfPerson()
+    fun relation(): Person_Relation = mOrma.relationOfPerson()
 
     private fun relationById(id: Long): Person_Relation = relation().idEq(id)
 
