@@ -2,6 +2,7 @@ package jp.chau2chaun2.kotlindatabindingsample.di
 
 import dagger.Subcomponent
 import jp.chau2chaun2.kotlindatabindingsample.view.BMICalculateActivity
+import jp.chau2chaun2.kotlindatabindingsample.view.BMIListActivity
 import jp.chau2chaun2.kotlindatabindingsample.view.BMIRealtimeCalculateActivity
 
 @ActivityScope
@@ -11,4 +12,6 @@ interface ActivityComponent {
     fun inject(activity: BMIRealtimeCalculateActivity)
 
     fun inject(activity: BMICalculateActivity)
+
+    fun inject(activity: BMIListActivity)
 }

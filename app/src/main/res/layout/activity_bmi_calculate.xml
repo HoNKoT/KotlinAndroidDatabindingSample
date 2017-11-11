@@ -5,8 +5,8 @@
     <data>
         <import type="android.view.View" />
         <variable
-            name="presenter"
-            type="jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter" />
+            name="person"
+            type="jp.chau2chaun2.kotlindatabindingsample.model.orma.Person" />
         <variable
             name="task"
             type="jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask" />
@@ -37,7 +37,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="@{presenter.person.height != null ? @string/format(presenter.person.height) : @string/empty}"
+                    android:text="@{person.height != null ? @string/format(person.height) : @string/empty}"
                     tools:text="161.0"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:inputType="numberDecimal"
-                    android:text="@{presenter.person.weight != null ? @string/format(presenter.person.weight) : @string/empty}"
+                    android:text="@{person.weight != null ? @string/format(person.weight) : @string/empty}"
                     tools:text="60.0"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -83,7 +83,7 @@
                     android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{presenter.person.bmi != null ? @string/format(presenter.person.bmi) : @string/empty}"
+                    android:text="@{person.bmi != null ? @string/format(person.bmi) : @string/empty}"
                     android:textSize="@dimen/large_text_size"
                     tools:text="BMI: 21.2"/>
                 <ProgressBar

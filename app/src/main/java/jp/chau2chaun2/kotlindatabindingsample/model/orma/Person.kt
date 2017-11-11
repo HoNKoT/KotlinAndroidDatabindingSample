@@ -1,6 +1,5 @@
 package jp.chau2chaun2.kotlindatabindingsample.model.orma
 
-import android.databinding.ObservableField
 import com.github.gfx.android.orma.SingleAssociation
 import com.github.gfx.android.orma.annotation.*
 import jp.chau2chaun2.kotlindatabindingsample.model.Gender
@@ -46,5 +45,21 @@ class Person {
     @set:Setter
     var building: SingleAssociation<Building>? = null
 
-    val displayBmi = ObservableField<String>("")
+    val displayBmi: String get() = bmi?.let { String.format("BMI: %.1f", it) } ?: ""
+
+    val canCalculate: Boolean get() =
+        height?.let { it > 0 } == true
+                && weight?.let { it > 0 } == true
+
+    fun calculateBmi() {
+        if (canCalculate) {
+            weight?.let { weight ->
+                height?.let { height ->
+                    bmi = weight / ((height / 100) * (height / 100))
+                }
+            }
+        } else {
+            bmi = null
+        }
+    }
 }

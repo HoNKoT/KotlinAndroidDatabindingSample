@@ -4,14 +4,13 @@ import android.content.Context
 import android.content.Intent
 import android.databinding.DataBindingUtil
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.Toast
 import jp.chau2chaun2.kotlindatabindingsample.R
 import jp.chau2chaun2.kotlindatabindingsample.databinding.ActivityBmiCalculateBinding
+import jp.chau2chaun2.kotlindatabindingsample.model.orma.Person
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 import jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask
-import javax.inject.Inject
 
 class BMICalculateActivity : BaseActivity() {
 
@@ -19,20 +18,21 @@ class BMICalculateActivity : BaseActivity() {
         DataBindingUtil.setContentView<ActivityBmiCalculateBinding>(this, R.layout.activity_bmi_calculate)
     }
 
-    @Inject lateinit var mPresenter: PersonPresenter
+    private lateinit var mPerson: Person
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        mBinding.presenter = mPresenter
+        mBinding.person = mPerson
     }
 
     override fun onActivityInject() {
         mComponent.inject(this)
+        mPerson = PersonPresenter.create
     }
 
     private fun updatePerson() {
-        mBinding.presenter?.person?.apply {
+        mBinding.person?.apply {
             height = mBinding.heightEditText.text.toString().takeIf { it.isNotEmpty() }?.toDouble()
             weight = mBinding.weightEditText.text.toString().takeIf { it.isNotEmpty() }?.toDouble()
         }
@@ -42,9 +42,8 @@ class BMICalculateActivity : BaseActivity() {
     fun onClickBmi(view: View) {
         updatePerson()
 
-        Log.d("DLog", mBinding.presenter?.person?.toString())
-        if (mBinding.presenter?.canCalculate == true) {
-            mBinding.task = BMICalculatorTask().also { it.execute(mBinding.presenter!!) }
+        if (mBinding.person?.canCalculate == true) {
+            mBinding.task = BMICalculatorTask().also { it.execute(mBinding.person!!) }
         } else {
             Toast.makeText(this, "input height and weight first", Toast.LENGTH_SHORT).show()
         }
