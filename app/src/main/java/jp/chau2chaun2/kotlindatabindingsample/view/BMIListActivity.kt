@@ -7,7 +7,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import jp.chau2chaun2.kotlindatabindingsample.R
 import jp.chau2chaun2.kotlindatabindingsample.databinding.ActivityBmiListBinding
-import jp.chau2chaun2.kotlindatabindingsample.model.Person
+import jp.chau2chaun2.kotlindatabindingsample.model.orma.Person
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 
 class BMIListActivity : AppCompatActivity() {

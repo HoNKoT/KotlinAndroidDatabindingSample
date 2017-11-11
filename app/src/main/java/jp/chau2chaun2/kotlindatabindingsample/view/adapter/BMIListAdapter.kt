@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.BaseAdapter
 import jp.chau2chaun2.kotlindatabindingsample.databinding.RowListBinding
-import jp.chau2chaun2.kotlindatabindingsample.model.Person
+import jp.chau2chaun2.kotlindatabindingsample.model.orma.Person
 import jp.chau2chaun2.kotlindatabindingsample.presenter.PersonPresenter
 import jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask
 

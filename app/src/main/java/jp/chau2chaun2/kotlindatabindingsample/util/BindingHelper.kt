@@ -2,7 +2,7 @@ package jp.chau2chaun2.kotlindatabindingsample.util
 
 import android.databinding.BindingAdapter
 import android.widget.ListView
-import jp.chau2chaun2.kotlindatabindingsample.model.Person
+import jp.chau2chaun2.kotlindatabindingsample.model.orma.Person
 import jp.chau2chaun2.kotlindatabindingsample.view.adapter.BMIListAdapter
 
 @BindingAdapter("data")

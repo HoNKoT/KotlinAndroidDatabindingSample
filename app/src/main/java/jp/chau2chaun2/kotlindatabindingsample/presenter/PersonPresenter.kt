@@ -1,7 +1,7 @@
 package jp.chau2chaun2.kotlindatabindingsample.presenter
 
 import jp.chau2chaun2.kotlindatabindingsample.model.Gender
-import jp.chau2chaun2.kotlindatabindingsample.model.Person
+import jp.chau2chaun2.kotlindatabindingsample.model.orma.Person
 import java.util.*
 
 class PersonPresenter {
