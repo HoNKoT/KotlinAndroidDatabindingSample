@@ -19,4 +19,6 @@ class MainActivity : AppCompatActivity() {
     fun onClickBMIRealtimeCalculate(view: View) = startActivity(BMIRealtimeCalculateActivity.getIntent(this))
 
     fun onClickBMIList(view: View) = startActivity(BMIListActivity.getIntent(this))
+
+    fun onClickRandomUserList(view: View) = startActivity(RandomUserListActivity.getIntent(this))
 }

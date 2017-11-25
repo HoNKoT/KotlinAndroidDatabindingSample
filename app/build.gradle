@@ -38,7 +38,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // for data binding
-    kapt 'com.android.databinding:compiler:3.0.0'
+    kapt 'com.android.databinding:compiler:3.0.1'
 
     // for dagger2
     compile "com.google.dagger:dagger:2.12"
@@ -49,6 +49,14 @@ dependencies {
     compile "com.github.gfx.android.orma:orma:4.2.5"
     kapt "com.github.gfx.android.orma:orma-processor:4.2.5"
 
+    // for Retrofit2
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+
+    // RxJava/RxAndroid
+    compile 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.6'
 
 }
 

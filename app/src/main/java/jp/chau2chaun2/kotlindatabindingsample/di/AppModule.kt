@@ -7,9 +7,11 @@ import com.github.gfx.android.orma.AccessThreadConstraint
 import dagger.Module
 import dagger.Provides
 import jp.chau2chaun2.kotlindatabindingsample.model.orma.OrmaDatabase
+import jp.chau2chaun2.kotlindatabindingsample.net.ApiService
+import jp.chau2chaun2.kotlindatabindingsample.net.IApiService
 import javax.inject.Singleton
 
-@Module
+@Module(includes = arrayOf(ClientModule::class))
 class AppModule(private val mContext: Context) {
 
     @Provides
@@ -35,5 +37,11 @@ class AppModule(private val mContext: Context) {
                 .writeOnMainThread(AccessThreadConstraint.NONE)
                 .readOnMainThread(AccessThreadConstraint.NONE)
                 .build()
+    }
+
+    @Singleton
+    @Provides
+    internal fun providesApiService(): IApiService {
+        return ApiService().service
     }
 }
