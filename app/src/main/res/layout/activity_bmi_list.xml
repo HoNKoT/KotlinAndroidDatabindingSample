@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
-        <import type="jp.chau2chaun2.kotlindatabindingsample.model.Person" />
+        <import type="jp.chau2chaun2.kotlindatabindingsample.model.orma.Person" />
         <import type="java.util.List"/>
         <variable name="person" type="Person"/>
         <variable name="persons" type="List&lt;Person&gt;"/>

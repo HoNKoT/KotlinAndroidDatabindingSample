@@ -5,7 +5,7 @@
         <import type="android.view.View" />
         <variable
             name="data"
-            type="jp.chau2chaun2.kotlindatabindingsample.model.Person" />
+            type="jp.chau2chaun2.kotlindatabindingsample.model.orma.Person" />
         <variable
             name="task"
             type="jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask" />
