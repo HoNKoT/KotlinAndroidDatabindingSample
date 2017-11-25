@@ -40,4 +40,10 @@ class RandomUserListActivityViewModel @Inject constructor(context: Context,
         }
         toast.show()
     }
+
+    fun deleteAll() {
+        val recordCount = presenter.deleteAll()
+        toast.setText("Deleted $recordCount Users")
+        toast.show()
+    }
 }

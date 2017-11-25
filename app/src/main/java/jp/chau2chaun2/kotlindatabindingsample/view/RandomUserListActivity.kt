@@ -46,6 +46,11 @@ class RandomUserListActivity : BaseActivity() {
             R.id.add_multiple -> {
                 viewModel.addMultiple { adapter.notifyDataSetChanged() }
             }
+
+            R.id.delete_all -> {
+                viewModel.deleteAll()
+                adapter.notifyDataSetChanged()
+            }
         }
         return super.onOptionsItemSelected(item)
     }

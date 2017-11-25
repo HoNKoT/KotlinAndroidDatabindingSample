@@ -20,4 +20,6 @@ class NameDao @Inject constructor(private val ormaDatabase: OrmaDatabase) {
             }
         }
     }
+
+    fun deleteAll(): Int = relation.deleter().execute()
 }

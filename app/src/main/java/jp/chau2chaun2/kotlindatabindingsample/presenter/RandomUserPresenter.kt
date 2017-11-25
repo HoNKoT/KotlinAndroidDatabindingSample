@@ -51,6 +51,8 @@ class RandomUserPresenter @Inject constructor(private val context: Context,
                 })
     }
 
+    fun deleteAll(): Int = nameDao.deleteAll()
+
     private fun registeredRandomUser(randomUser: RandomUser) {
         nameDao.insert(randomUser)
         resultDao.insert(randomUser)

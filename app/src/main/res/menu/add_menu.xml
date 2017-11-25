@@ -8,4 +8,8 @@
         android:id="@+id/add_multiple"
         android:title="Add multiple item" />
 
+    <item
+        android:id="@+id/delete_all"
+        android:title="Delete All" />
+
 </menu>
