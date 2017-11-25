@@ -33,7 +33,7 @@ class RandomUserPresenter @Inject constructor(private val context: Context,
                 })
     }
 
-    fun getNewRandomUsers(callback: () -> Unit, numberOfUsers: Int) {
+    fun getNewRandomUsers(numberOfUsers: Int, callback: () -> Unit) {
         apiRandomUser.getRandomUser(numberOfUsers)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
