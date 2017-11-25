@@ -4,6 +4,7 @@ import dagger.Subcomponent
 import jp.chau2chaun2.kotlindatabindingsample.view.BMICalculateActivity
 import jp.chau2chaun2.kotlindatabindingsample.view.BMIListActivity
 import jp.chau2chaun2.kotlindatabindingsample.view.BMIRealtimeCalculateActivity
+import jp.chau2chaun2.kotlindatabindingsample.view.RandomUserListActivity
 
 @ActivityScope
 @Subcomponent(modules = arrayOf(ActivityModule::class))
@@ -14,4 +15,6 @@ interface ActivityComponent {
     fun inject(activity: BMICalculateActivity)
 
     fun inject(activity: BMIListActivity)
+
+    fun inject(activity: RandomUserListActivity)
 }
