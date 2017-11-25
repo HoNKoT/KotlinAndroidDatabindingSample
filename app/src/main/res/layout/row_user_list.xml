@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <import type="android.view.View" />
+        <variable
+            name="data"
+            type="jp.chau2chaun2.kotlindatabindingsample.model.orma.Result" />
+        <variable
+            name="name"
+            type="jp.chau2chaun2.kotlindatabindingsample.model.orma.Name" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/half_margin"
+        android:layout_marginLeft="@dimen/general_margin"
+        android:layout_marginRight="@dimen/general_margin"
+        android:layout_marginTop="@dimen/half_margin"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/title_first_last(name.title, name.first, name.last)}"
+            tools:text="Mr. Hiroki Honda" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{@string/gender_nation_cell(data.gender, data.nat, data.cell)}"
+            android:textSize="@dimen/small_text_size"
+            tools:text="Male / JP / +1234-567-8900" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{data.email}"
+            android:textSize="@dimen/small_text_size"
+            tools:text="xxxxxx@example.com" />
+
+    </LinearLayout>
+</layout>

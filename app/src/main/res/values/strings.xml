@@ -11,6 +11,8 @@
     <string name="bmi_plus">BMI: %.1f</string>
     <string name="cm">cm</string>
     <string name="kg">kg</string>
+    <string name="title_first_last">%1$s. %2$s %3$s</string>
+    <string name="gender_nation_cell">%1$s / %2$s / %3$s</string>
 
     <string name="move_to_BMICalculateActivity">DataBinding Basic</string>
     <string name="move_to_BMIRealtimeCalculateActivity">DataBinding Bindable</string>
