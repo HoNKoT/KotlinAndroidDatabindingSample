@@ -38,7 +38,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
 
     // for data binding
-    kapt 'com.android.databinding:compiler:3.0.0'
+    kapt 'com.android.databinding:compiler:3.0.1'
 
     // for dagger2
     compile "com.google.dagger:dagger:2.12"
