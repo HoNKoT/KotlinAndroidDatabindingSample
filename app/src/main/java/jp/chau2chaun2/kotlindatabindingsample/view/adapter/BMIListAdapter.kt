@@ -17,8 +17,8 @@ class BMIListAdapter(context: Context, private val persons: List<Person>): BaseA
 
     override fun onItemClick(adapter: AdapterView<*>?, view: View?, position: Int, id: Long) {
         view?.let {
-            DataBindingUtil.findBinding<RowListBinding>(it).also {
-                it.task = BMICalculatorTask().apply {
+            DataBindingUtil.findBinding<RowListBinding>(it).also { rowList ->
+                rowList.task = BMICalculatorTask().apply {
                     execute(getItem(position)) }
             }
         }
