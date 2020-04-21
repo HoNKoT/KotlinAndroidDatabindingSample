@@ -15,7 +15,7 @@ class PersonPresenter @Inject constructor(private val personDao: PersonDao) {
             // insert some data
             val persons = ArrayList<Person>().apply {
                 for (i in 0 until 50) {
-                    add(PersonPresenter.createAsDummy)
+                    add(createAsDummy)
                 }
             }
 
