@@ -15,7 +15,7 @@ import jp.chau2chaun2.kotlindatabindingsample.task.BMICalculatorTask
 class BMICalculateActivity : BaseActivity() {
 
     private val mBinding: ActivityBmiCalculateBinding by lazy {
-        DataBindingUtil.setContentView(this, R.layout.activity_bmi_calculate)
+        DataBindingUtil.setContentView<ActivityBmiCalculateBinding>(this, R.layout.activity_bmi_calculate)
     }
 
     private lateinit var mPerson: Person

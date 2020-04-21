@@ -33,7 +33,7 @@ class BMIRealtimeCalculateViewModel @Inject constructor() : BaseObservable() {
             updateBmi()
         }
 
-    var displayBmi = ObservableField("")
+    var displayBmi = ObservableField<String>("")
 
     private fun updateBmi() {
         person.calculateBmi()
