@@ -26,7 +26,7 @@ class BMIListAdapter(context: Context, private val persons: List<Person>): BaseA
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         val binding = convertView
-                ?.let { DataBindingUtil.findBinding<RowListBinding>(convertView) }
+                ?.let { DataBindingUtil.findBinding(convertView) }
                 ?: RowListBinding.inflate(mLayoutInflater)
 
         binding.data = getItem(position)

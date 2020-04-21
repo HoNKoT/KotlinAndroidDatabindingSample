@@ -15,7 +15,7 @@ import javax.inject.Named
 class BMIRealtimeCalculateActivity : BaseActivity() {
 
     private val mBinding: ActivityBmiRealtimeCalculateBinding by lazy {
-        DataBindingUtil.setContentView<ActivityBmiRealtimeCalculateBinding>(this, R.layout.activity_bmi_realtime_calculate)
+        DataBindingUtil.setContentView(this, R.layout.activity_bmi_realtime_calculate)
     }
 
     @Inject lateinit var viewModel: BMIRealtimeCalculateViewModel
